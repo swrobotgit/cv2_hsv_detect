@@ -5,14 +5,14 @@ from util import get_limits
 
 
 yellow = [0, 255, 255]  # yellow in BGR colorspace
-red = [4, 16, 190]  # red in BGR colorspace
+red = [215,0, 0]  # red in BGR colorspace
 cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
 
     hsvImage = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
-    lowerLimit, upperLimit = get_limits(color=red)
+    lowerLimit, upperLimit = get_limits(color=yellow)
 
     mask = cv2.inRange(hsvImage, lowerLimit, upperLimit)
 
